@@ -1,0 +1,57 @@
+
+import android.app.*;
+import android.os.*;
+import android.widget.*;
+import android.view.View.*;
+import java.io.IOException;
+import android.app.Activity;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+import android.webkit.WebView;
+import android.webkit.*;
+public class MainActivity extends Activity implements OnClickListener
+{
+//private Button button_1; 
+	
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+
+		
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+		
+	WebView webView1 = (WebView) findViewById(R.id.webView1);  
+
+		webView1.loadUrl("http://adminblu.herokuapp.com/dashboard/admin-template/dashboard");
+
+		WebSettings webSettings = webView1.getSettings();
+		webSettings.setJavaScriptEnabled(true);
+        
+		/*
+		Button button_1 = (Button)findViewById(R.id.button_1);
+          button_1.setOnClickListener(this);*/
+		  
+    // Implement the OnClickListener callback
+ 
+	
+	
+		//button_1.setText("ivan");
+	
+		// do something when the button is clicked
+    }
+
+    public void onClick(View v)
+    {
+        Toast.makeText(this, "Clicked on Button", Toast.LENGTH_LONG).show();
+    } 
+	
+}
